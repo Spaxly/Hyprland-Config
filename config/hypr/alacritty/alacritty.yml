@@ -1,0 +1,23 @@
+import:
+  - ~/.config/hypr/alacritty/colors.yml
+
+font:
+  normal:
+    # family: FantasqueSansMono Nerd Font
+    family: JetBrainsMono Nerd Font
+    # family: Victor Mono Nerd Font
+    style: Italic
+  size: 18
+
+window:
+  padding:
+    x: 50
+    y: 50
+    dynamic_padding: true
+  opacity: 0.9
+
+live_config_reload: true
+
+cursor:
+  style: Beam
+  vi_style_cursor: Beam

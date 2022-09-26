@@ -1,0 +1,82 @@
+@import "themes/mocha.css";
+
+* {
+    /* border: none; */
+    /* border-radius: 20px; */
+    min-height: 0;
+    margin: 0.2em 0.3em 0.2em 0.3em;
+}
+
+window#waybar {
+  background: @mantle;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15;
+}
+
+#workspaces {
+  background: @surface0;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#workspaces button.active {
+  color: @yellow;
+}
+
+#cpu {
+  background: @mauve;
+  color: @base;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#pulseaudio {
+  background: @blue;
+  color: @base;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#clock {
+  background: @green;
+  color: @base;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#memory {
+  background: @yellow;
+  color: @base;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#custom-pacman {
+  background: @rosewater;
+  color: @base;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#custom-media {
+  background: @peach;
+  color: @base;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#window {
+  border-radius: 20px;
+  color: @base;
+  background: @blue;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+

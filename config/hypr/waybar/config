@@ -1,0 +1,102 @@
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 40, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 10, // Gaps between modules (4px)
+    // Choose the order of the modules
+    /* "margin-top": 8, */
+    /* "margin-left": 10, */
+    /* "margin-right": 10, */
+    "modules-left": ["wlr/workspaces", "custom/media"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "custom/pacman", "cpu", "memory", "clock", "tray"],
+    "wlr/workspaces": {
+      "persistent_workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+    },
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+        "active": "",
+        "default": "",
+        },
+      },
+    // Modules configuration
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": " {:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+    },
+    "memory": {
+        "format": "力 {}%"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/pacman": {
+    "format": "  {}",
+    "interval": 3600,
+    "exec": "checkupdates | wc -l",
+    "on-click": "alacritty -e yay -Syu",
+    "signal": 8
+  },
+
+    "custom/media": {
+      "format": "{icon} {}",
+      "escape": true,
+      "return-type": "json",
+      "max-length": 40,
+      "on-click": "playerctl play-pause",
+      "on-click-right": "playerctl stop",
+      "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+      "on-scroll-up": "playerctl next",
+      "on-scroll-down": "playerctl previous",
+    "exec": "~/.config/hypr/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+}
+}
+
+
