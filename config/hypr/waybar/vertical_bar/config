@@ -1,26 +1,24 @@
 {
     // "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 40, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    /* "layer": "left", */
+    "position": "left", // Waybar position (top|bottom|left|right)
+    "height": 1440, // Waybar height (to be removed for auto height)
+    /* "width": 100, // Waybar width */
+    "width": 60,
     "spacing": 10, // Gaps between modules (4px)
+    /* "margin": "0px 0px 0p 0px", */
     // Choose the order of the modules
-    /* "margin-top": 8, */
-    /* "margin-left": 10, */
-    /* "margin-right": 10, */
-    "modules-left": ["wlr/workspaces", "custom/media"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "custom/pacman", "cpu", "memory", "clock", "tray"],
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "modules-left": ["custom/launcher", "wlr/workspaces"],
+    /* "modules-center": ["hyprland/window"], */
+    "modules-right": ["pulseaudio", "custom/pacman", "clock", "tray"],
     "wlr/workspaces": {
-      "persistent_workspaces": {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": [],
-    },
-        "format": "{icon}",
-        "on-click": "activate",
+      "max-length": 40,
+      "format": "{icon}",
+      "on-click": "activate",
+      "active-only": "false",
         "format-icons": {
         "active": "",
         "default": "",
@@ -44,27 +42,33 @@
     // },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 10,
+        "max-length": 40,
     },
-    "clock": {
-        "format": " {:%I:%M %p}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
+     "clock": {
+        "format": 
+        "{:%I
+%M}",
+        "tooltip-format": "
+            <big>{:%Y %B}</big>
+            <tt><small>{calendar}</small></tt>",
+          },
     "cpu": {
         "format": " {usage}%",
         "tooltip": false,
+        "max-length": 40,
     },
     "memory": {
-        "format": "力 {}%"
+        "format": "力 {}%",
+        "max-length": 40,
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+          "format": "{icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -78,11 +82,12 @@
         "on-click": "pavucontrol"
     },
     "custom/pacman": {
-    "format": "  {}",
+    "format": 
+    "  {}",
     "interval": 3600,
     "exec": "checkupdates | wc -l",
     "on-click": "alacritty -e yay -Syu",
-    "signal": 8
+    "signal": 8,
   },
 
     "custom/media": {
@@ -95,7 +100,14 @@
       "on-scroll-up": "playerctl next",
       "on-scroll-down": "playerctl previous",
     "exec": "~/.config/hypr/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-}
+    },
+
+    "custom/launcher": {
+        "interval": "once",
+        "format": "",
+        "on-click": "wofi --show drun -I -s ~/.config/hypr/wofi/style.css --width=500 --height=450",
+        "max-length": 40,
+      },
 }
 
 
