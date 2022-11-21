@@ -8,8 +8,8 @@
 ![issues](https://img.shields.io/github/issues/Spaxly/Hyprland-Config)
 
 # Dependencies
-```yay -Syu $(cat pkglist) && git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim```
+```yay -Syu $(cat pkglist)```
 
 
 # Install
-```cp -rf config/ ~/.config/ && mv ~/.config/custom ~/.config/nvim/lua/```
+```cp -rf config/ ~/.config/```

@@ -1,0 +1,46 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "left", // Waybar position (top|bottom|left|right)
+    "height": 1420, // Waybar height (to be removed for auto height)
+    "margin-left": 10,
+    "width": 60, // Waybar width
+    "spacing": 5, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["custom/launcher"],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": ["custom/pacman", "clock", "tray"],
+
+    "wlr/workspaces": {
+      "max-length": 10,
+      "format": "{icon}",
+      "on-click": "activate",
+      "active-only": "false",
+        "format-icons": {
+        "active": "",
+        "default": "",
+        },
+    },
+
+    "clock": {
+      "interval": 60,
+      "format": "<span color='#111111'>{:%I
+%M}</span>",
+    },
+
+    "custom/pacman": {
+      "format": 
+        " {} 
+PKG",
+      "interval": 10,
+      "exec": "checkupdates | wc -l",
+      "on-click": "alacritty --config-file ~/.config/hypr/apps/alacritty/alacritty.yml -e yay -Syu",
+      "signal": 8,
+  },
+
+    "custom/launcher": {
+      "interval": "once",
+      "format": "",
+      "on-click": "wofi --show drun -I -s ~/.config/hypr/wofi/style.css --width=500 --height=450",
+      "max-length": 10,
+    },
+}

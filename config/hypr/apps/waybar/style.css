@@ -1,0 +1,59 @@
+@import "themes/mocha.css";
+
+* {
+    /* border: none; */
+    /* border-radius: 10px; */
+    min-height: 0;
+    margin: 0.2em 0.2em 0.2em 0.2em;
+    border-radius: 10px;
+    /* margin-left: 0.2em; */
+    /* margin-right: 0.2em; */
+    /* margin-top: 3; */
+    /* margin-bottom: 3; */
+}
+
+window#waybar {
+  background-color: @base;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15px;
+}
+
+#workspaces {
+  border-radius: 10px;
+  background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%);
+}
+
+#workspaces button { 
+  color: @crust;
+}
+
+#workspaces button.active {
+  color: white;
+  background: @base;
+}
+
+#custom-launcher {
+  background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%);
+  color: #1793d1;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 5px;
+  /* margin-right: 10px; */
+  padding-right: 5px;
+}
+
+#custom-pacman {
+  background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%);
+  color: black;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#clock {
+  background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 100%);
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "JetBrainsMono Nerd Font";
+}

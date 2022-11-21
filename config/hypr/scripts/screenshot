@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sleep 3 && grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot copied to clipboard"
