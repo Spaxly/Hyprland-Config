@@ -1,17 +1,17 @@
 {
     "layer": "top", // Waybar at top layer
-    "position": "left", // Waybar position (top|bottom|left|right)
-    "height": 1420, // Waybar height (to be removed for auto height)
-    "margin-left": 10,
-    "width": 60, // Waybar width
-    "spacing": 5, // Gaps between modules (4px)
+    "position": "top", // Waybar position (top|bottom|left|right)
+    /* "height": 50, // Waybar height (to be removed for auto height) */
+    "margin": 10,
+    /* "width": 60, // Waybar width */
+    /* "spacing": 5, // Gaps between modules (4px) */
     // Choose the order of the modules
     "modules-left": ["custom/launcher"],
     "modules-center": ["wlr/workspaces"],
     "modules-right": ["custom/pacman", "clock", "tray"],
 
     "wlr/workspaces": {
-      "max-length": 10,
+      /* "max-length": 10, */
       "format": "{icon}",
       "on-click": "activate",
       "active-only": "false",
@@ -41,6 +41,6 @@ PKG",
       "interval": "once",
       "format": "",
       "on-click": "wofi --show drun -I -s ~/.config/hypr/wofi/style.css --width=500 --height=450",
-      "max-length": 10,
+      /* "max-length": 10, */
     },
 }
